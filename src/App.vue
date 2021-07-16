@@ -1,17 +1,32 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <nav>
+      <ul>
+        <li><router-link to="/shop">Shop</router-link></li>
+        <li><router-link to="/cart">Cart</router-link></li>
+      </ul>
+    </nav>
+    
+    <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    <router-view/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    // HelloWorld
+  },
+  data(){
+    return{
+      
+    }
+  },
+  mounted(){
+    this.$store.commit('addlocalStorage')
   }
 }
 </script>
@@ -24,5 +39,25 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+nav{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+#app{
+
+}
+ul{
+  display:flex;
+  justify-content: center;
+  
+}
+li{
+  margin:20px;
+  
+}
+a{
+  text-decoration: none;
 }
 </style>
